@@ -1,0 +1,43 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: docker:17.06.0-ce-git
+    working_directory: /app
+    steps:
+      - checkout
+      - setup_remote_docker
+      - restore_cache:
+          keys:
+            - v1-{{ .Branch }}
+      - run:
+          name: Load Docker image layer cache
+          command: |
+            set +o pipefail
+            docker load -i /caches/app.tar | true
+      - run:
+          name: Build Docker container
+          command: docker build --cache-from personal-website -t personal-website .
+      - run:
+          name: Save Docker image layer cache
+          command: |
+            mkdir -p /caches
+            docker save -o /caches/app.tar personal-website
+      - save_cache:
+          key: v1-{{ .Branch }}-{{ epoch }}
+          paths:
+            - /caches/app.tar
+      - run:
+          name: Run Docker container
+          command: docker run -d -p 80:3000 --name personal-website personal-website
+      - run:
+          name: Run JS linter
+          command: docker exec -it personal-website npm run lint:js
+      - run:
+          name: Log in to Docker
+          command: docker login -u $DOCKER_USER -p $DOCKER_PASS
+      - run:
+          name: Publish Docker container
+          command: |
+            docker tag personal-website markazhang/personal-website:$CIRCLE_SHA1
+            docker push markazhang/personal-website:$CIRCLE_SHA1
