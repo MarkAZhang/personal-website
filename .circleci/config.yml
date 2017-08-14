@@ -41,3 +41,8 @@ jobs:
           command: |
             docker tag personal-website markazhang/personal-website:$CIRCLE_SHA1
             docker push markazhang/personal-website:$CIRCLE_SHA1
+      - deploy:
+          name: SSH to production and run deploy script
+          command: |
+            ssh-keyscan $DROPLET_IP >> ~/.ssh/known_hosts
+            ssh -v $DROPLET_USER@$DROPLET_IP "./deploy.sh $CIRCLE_SHA1"
