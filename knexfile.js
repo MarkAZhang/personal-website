@@ -1,10 +1,6 @@
 module.exports = {
   client: 'mysql2',
-  connection: {
-    database: 'personal_website',
-    user: 'root',
-    password: 'password',
-  },
+  connection: 'mysql://root:password@mysql:3306/personal_website?charset=utf8mb4',
   pool: {
     min: 2,
     max: 10,

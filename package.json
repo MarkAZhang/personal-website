@@ -7,6 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node back-end/dist/server.js",
+    "start:prod": "npm run migrate && npm run start",
     "build:frontend": "webpack --config webpack.config.frontend.js",
     "build:backend": "webpack --config webpack.config.backend.js",
     "watch:frontend": "webpack --watch --config webpack.config.frontend.js",
