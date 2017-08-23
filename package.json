@@ -6,8 +6,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
-    "build": "webpack",
+    "start": "node back-end/dist/server.js",
+    "build:frontend": "webpack --config webpack.config.frontend.js",
+    "build:backend": "webpack --config webpack.config.backend.js",
+    "watch:frontend": "webpack --watch --config webpack.config.frontend.js",
+    "watch:backend": "webpack --watch --config webpack.config.backend.js",
     "watch": "webpack --watch",
     "lint:js": "eslint front-end/src",
     "migrate:make": "knex migrate:make",
