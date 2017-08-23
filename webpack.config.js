@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 var webpack = require('webpack');
 var path = require('path');
 
@@ -5,7 +7,10 @@ var BUILD_DIR = path.resolve(__dirname, 'front-end/dist');
 var APP_DIR = path.resolve(__dirname, 'front-end/src');
 
 var config = {
-  entry: APP_DIR + '/index.js',
+  entry: [
+    'babel-polyfill',
+    APP_DIR + '/index.js',
+  ],
   output: {
     path: BUILD_DIR,
     filename: 'app.js'
