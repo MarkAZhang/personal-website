@@ -12,6 +12,8 @@ COPY postcss.config.js ./
 COPY front-end front-end
 COPY back-end back-end
 COPY migrations migrations
+COPY .env.prod ./
+COPY .babelrc ./
 
 RUN npm run build:backend
 RUN npm run build:frontend

@@ -6,13 +6,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node back-end/dist/server.js",
-    "start:prod": "npm run migrate && npm run start",
+    "start": "node back-end-dist/index.js",
+    "start:prod": "NODE_ENV=prod npm run migrate && NODE_ENV=prod npm run start",
     "build:frontend": "webpack --config webpack.config.frontend.js",
-    "build:backend": "webpack --config webpack.config.backend.js",
+    "build:backend": "babel back-end -sd back-end-dist",
     "watch:frontend": "webpack --watch --config webpack.config.frontend.js",
-    "watch:backend": "webpack --watch --config webpack.config.backend.js",
-    "watch": "webpack --watch",
+    "watch:backend": "babel --watch back-end -sd back-end-dist",
     "lint:js": "eslint front-end/src",
     "migrate:make": "knex migrate:make",
     "migrate": "knex migrate:latest",
@@ -22,6 +21,7 @@
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^7.1.2",
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.25.0",
     "babel-eslint": "^7.2.3",
     "babel-loader": "^7.1.1",
@@ -44,6 +44,7 @@
     "webpack": "^3.5.4"
   },
   "dependencies": {
+    "dotenv": "^4.0.0",
     "express": "^4.15.4",
     "isomorphic-fetch": "^2.2.1",
     "knex": "^0.13.0",

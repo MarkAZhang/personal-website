@@ -11,7 +11,7 @@ services:
       - my-datavolume:/var/lib/mysql
 
   personal-website:
-    build:
+    build: .
     links:
      - mysql
     ports:

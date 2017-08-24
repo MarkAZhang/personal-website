@@ -1,6 +1,9 @@
+/* eslint-disable */
+var config = require('./config')
+
 module.exports = {
   client: 'mysql2',
-  connection: 'mysql://root:password@mysql:3306/personal_website?charset=utf8mb4',
+  connection: config.getSqlConnection(),
   pool: {
     min: 2,
     max: 10,

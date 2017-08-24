@@ -6,4 +6,4 @@ booksRouter.get('/', (req, res) =>
   res.json(['Monkeys', 'Monkey2'])
 )
 
-module.exports = booksRouter
+export default booksRouter

@@ -15,6 +15,7 @@ jobs:
                 git clone https://github.com/MarkAZhang/personal-website.git
               fi
               cd personal-website
+              git pull origin master
               chmod a+x ./deploy.sh
               ./deploy.sh
             EOF

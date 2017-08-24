@@ -6,4 +6,4 @@ const router = express.Router()
 
 router.use('/books', books)
 
-module.exports = router
+export default router
