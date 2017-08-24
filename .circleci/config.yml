@@ -16,6 +16,5 @@ jobs:
               fi
               cd personal-website
               git pull origin master
-              chmod a+x ./deploy.sh
               ./deploy.sh
             EOF
