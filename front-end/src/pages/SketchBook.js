@@ -1,9 +1,9 @@
 import cs from './styles.css'
 
-const Home = () => (
+const SketchBook = () => (
   <div className={cs.title}>
-    Home
+   Sketch Book
   </div>
 )
 
-export default Home
+export default SketchBook
