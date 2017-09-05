@@ -1,33 +1,20 @@
-import {NavLink, Link} from 'react-router-dom'
+import {PropTypes} from 'react'
+import cx from 'classnames'
 
-import config from '../config'
+import NavLinks from '../NavLinks'
 
 import cs from './styles.css'
 
-const DesktopNav = () => (
-  <div className={cs.navigation}>
+const DesktopNav = props => (
+  <div className={cx(cs.navigation, props.className)}>
     <div className={cs.inner}>
-      <div className={cs.titleContainer}>
-        <Link className={cs.title} to='/'>
-          Mark A. Zhang
-        </Link>
-      </div>
-      <div className={cs.links}>
-        {config.links.map(link => (
-          <NavLink
-            className={cs.link}
-            activeClassName={cs.activeLink}
-            key={link.label}
-            to={link.to}
-          >
-            <div className={cs.linkLabel}>
-              {link.label}
-            </div>
-          </NavLink>
-        ))}
-      </div>
+      <NavLinks />
     </div>
   </div>
 )
+
+DesktopNav.propTypes = {
+  className: PropTypes.string,
+}
 
 export default DesktopNav

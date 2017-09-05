@@ -1,7 +1,32 @@
+@import 'vars.css';
+
 .app {
   display: flex;
 }
 
 .content {
   padding: 60px 120px;
+}
+
+
+.mobileNav {
+  display: none;
+}
+
+@media (max-width: $mobile-max-width) {
+  .desktopNav {
+    display: none;
+  }
+
+  .mobileNav {
+    display: inherit;
+  }
+
+  .app {
+    flex-direction: column;
+  }
+
+  .content {
+    margin-top: 70px;
+  }
 }

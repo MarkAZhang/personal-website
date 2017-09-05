@@ -1,16 +1,5 @@
 @import 'vars.css';
 
-.navigation {
-  width: 300px;
-  height: 100vh;
-  background-color: #faf9f7;
-  box-shadow: 4px 0 4px rgba(0, 0, 0, 0.25);
-}
-
-.inner {
-  padding: 60px;
-}
-
 .titleContainer {
   padding-bottom: 25px;
 }

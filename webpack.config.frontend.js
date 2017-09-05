@@ -32,6 +32,11 @@ var config = {
         exclude: [/node_modules/]
       },
       {
+        test: /\.css$/,
+        loader: 'style-loader!css-loader',
+        include: [/node_modules/],
+      },
+      {
         test: /\.(png|svg|eot|woff2?|ttf)/,
         loader: 'url-loader?limit=5000&publicPath=static/',
       },

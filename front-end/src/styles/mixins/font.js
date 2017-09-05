@@ -6,7 +6,7 @@ const fontStyles = {
   },
   heroTitle: {
     fontSize: 72,
-    fontWeight: 400, /* Get Semibold Lato */
+    fontWeight: 700, /* Get Semibold Lato */
   },
   sidebarTitle: {
     fontSize: 16,
