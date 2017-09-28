@@ -6,7 +6,12 @@ const fontStyles = {
   },
   heroTitle: {
     fontSize: 72,
-    fontWeight: 700, /* Get Semibold Lato */
+    fontWeight: 700,
+  },
+  heroText: {
+    fontSize: 48,
+    lineHeight: '1.4em',
+    fontWeight: 300,
   },
   sidebarTitle: {
     fontSize: 16,
@@ -19,6 +24,15 @@ const fontStyles = {
     fontWeight: 400,
     textTransform: 'uppercase',
     letterSpacing: '0.2em',
+  },
+  pageTitle: {
+    fontSize: 48,
+    fontWeight: 700,
+  },
+  bodyText: {
+    fontSize: 32,
+    lineHeight: '1.4em',
+    fontWeight: 300,
   },
 }
 

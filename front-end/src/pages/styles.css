@@ -1,3 +1,97 @@
-.title {
+@import 'vars.css';
+
+.heroTitle {
   @mixin font heroTitle;
+}
+
+.heroText {
+  @mixin font heroText;
+  margin-top: 30px;
+  max-width: 800px;
+
+  p {
+    margin-bottom: 20px;
+    margin-top: 0px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.highlight {
+  color: $red;
+}
+
+.home {
+  .links {
+    display: flex;
+    margin-top: 30px;
+  }
+
+  .link {
+    @mixin font sidebarLink;
+    position: relative;
+    margin-left: 13px;
+    margin-right: 10px;
+    color: $sidebar-link;
+    cursor: pointer;
+    padding-bottom: 3px;
+    transition: color 0.2s $ease-out-quart;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover {
+      color: black;
+
+      &:after {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    &:after {
+      width: 100%;
+      top: 100%;
+      left: 0;
+      content: '';
+      border-bottom: 2px solid $red;
+      position: absolute;
+      opacity: 0;
+      transition: all 0.2s $ease-out-quart;
+      transform: translateY(2px);
+    }
+  }
+}
+
+.separator {
+  height: 16px;
+  width: 1px;
+  background-color: $sidebar-link;
+}
+
+.title {
+  @mixin font pageTitle;
+  max-width: 800px;
+}
+
+.text {
+  @mixin font bodyText;
+  max-width: 800px;
+  margin-top: 30px;
+
+  p {
+    margin-bottom: 30px;
+    margin-top: 0px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 }
