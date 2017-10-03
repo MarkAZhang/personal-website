@@ -17,10 +17,12 @@ const Home = () => (
     </div>
     <div className={cs.links}>
       <NavLink className={cs.link} to='/about'>More About Me</NavLink>
-      <div className={cs.separator} />
-      <NavLink className={cs.link} to='/projects'>My Projects</NavLink>
-      <div className={cs.separator} />
-      <NavLink className={cs.link} to='/reading-list'>My Favorite Books</NavLink>
+      {/*
+        <div className={cs.separator} />
+        <NavLink className={cs.link} to='/projects'>My Projects</NavLink>
+        <div className={cs.separator} />
+        <NavLink className={cs.link} to='/reading-list'>My Favorite Books</NavLink>
+      */}
     </div>
   </div>
 )
