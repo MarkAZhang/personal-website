@@ -23,7 +23,7 @@ class MobileNav extends Component {
       >
         <div className={cs.controls}>
           <Icon
-            glyph={this.state.isOpen ? 'lnr-cross' : 'lnr-menu'}
+            glyph={this.state.isOpen ? 'x' : 'menu'}
             className={cs.openIcon}
             onClick={() => this.setOpen(!this.state.isOpen)}
           />

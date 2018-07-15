@@ -1,8 +1,10 @@
 import MathJax from 'react-mathjax2'
+import cx from 'classnames'
+
+import Icon from '~/components/Icon'
 
 import IF from './InlineFormula'
 import F from './BlockFormula'
-
 import cs from './styles.css'
 
 const SupervisedLearning = () => (
@@ -178,8 +180,8 @@ const SupervisedLearning = () => (
         The top supervised learning algorithms tend to perform on par with each other,
         and all of them do better with more data.
       </p>
-      <div className={cs.note}>
-        - Mark
+      <div className={cx(cs.footer, cs.note)}>
+        Made with <Icon glyph='heart' className={cs.heart} /> by Mark
       </div>
     </div>
   </MathJax.Context>
