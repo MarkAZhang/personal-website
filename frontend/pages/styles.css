@@ -4,6 +4,7 @@
   @mixin font heroTitle;
   margin-bottom: 20px;
   color: $text;
+  opacity: 0.7;
 }
 
 .heroSubtitle {
@@ -24,7 +25,7 @@
 }
 
 .heading {
-  @mixin font heading;
+  @mixin font smallHeading;
   color: $text;
   margin-bottom: 10px;
   text-decoration: underline;

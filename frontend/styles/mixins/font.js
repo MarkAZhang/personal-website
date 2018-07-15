@@ -36,6 +36,14 @@ const fontStyles = {
     fontWeight: 700,
   },
   heading: {
+    fontSize: 36,
+    fontWeight: 400,
+  },
+  heading2: {
+    fontSize: 24,
+    fontWeight: 700,
+  },
+  smallHeading: {
     fontSize: 24,
     fontWeight: 400,
   },
