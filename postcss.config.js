@@ -1,14 +1,13 @@
-/* eslint-disable */
 var path = require('path')
-var CUR_DIR = path.resolve(__dirname, 'front-end/src/styles')
+var STYLES_DIR = path.resolve(__dirname, 'frontend/styles')
 
 module.exports = {
   plugins: [
     require('postcss-import')({
-      path: CUR_DIR,
+      path: [STYLES_DIR],
     }),
     require('postcss-mixins')({
-      mixins: require(CUR_DIR + '/mixins'),
+      mixins: require(STYLES_DIR + '/mixins'),
     }),
     require('postcss-simple-vars'),
     require('postcss-nested'),

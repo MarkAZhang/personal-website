@@ -1,21 +1,16 @@
-FROM node:8-alpine
-
+FROM node:9-alpine
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
-COPY package.json ./
-RUN npm install
+COPY package.json .
+RUN yarn install --production
 
-COPY .eslintrc.json ./
-COPY *.js ./
-COPY postcss.config.js ./
-COPY front-end front-end
-COPY back-end back-end
-COPY migrations migrations
-COPY .env.prod ./
-COPY .babelrc ./
+# Install packages and run build-prod and build-server before running Docker build.
+COPY backend-dist backend-dist
+COPY frontend-dist frontend-dist
 
-RUN npm run build:backend
-RUN npm run build:frontend
+COPY index.html .
 
-EXPOSE 3000
+EXPOSE 80
+
+CMD npm run start-prod
