@@ -12,11 +12,11 @@ const SupervisedLearning = () => (
     <div className={cs.post}>
       <div className={cs.title}>Supervised Learning</div>
       <div className={cs.note}>
-        A quick review for those who have already studied supervised learning.
+        A review for those who have studied supervised learning before.
       </div>
       <h2>Training Examples</h2>
       <p>
-        In order to apply a supervised machine learning algorithm,
+        In order to make use of a supervised machine learning model,
         you will need a set of <b>pre-labeled training examples</b>.
       </p>
       <p>
@@ -64,9 +64,9 @@ const SupervisedLearning = () => (
         </F>
       </p>
       <p>
-        Certain machine learning algorithms are better suited to different types of problems.
-        For example, linear regression is a basic algorithm for regression problems,
-        and logistic regression is (confusingly) a basic algorithm for classification problems.
+        Certain machine learning models are better suited to different types of problems.
+        For example, linear regression is a basic model for regression problems,
+        and logistic regression is (confusingly) a basic model for classification problems.
       </p>
       <h2>The Hypothesis Function</h2>
       <p>
@@ -77,9 +77,9 @@ const SupervisedLearning = () => (
         <F>{'H(x^{(i)}) \\approx y^{(i)}'}</F>
       </p>
       <p>
-        Based on your choice of learning algorithm, the hypothesis function will take
-        on different forms. For example, in linear regression, the hypothesis has
-        the form,
+        Different learning models make different assumptions about the form of
+        the hypothesis function. For example, linear regression restricts the hypothesis
+        to functions of the form:
       </p>
       <p>
         <F>
@@ -102,8 +102,8 @@ const SupervisedLearning = () => (
       </p>
       <h2>The Cost Function</h2>
       <p>
-        The <b>cost function</b> <IF>J</IF> is the means by which your learning algorithm evaluates
-        the performance of <IF>{'H_{\\theta}(x)'}</IF> for its current choice
+        The <b>cost function</b> <IF>J</IF> is the means by which the learning algorithm evaluates
+        the performance of the hypothesis <IF>{'H_{\\theta}(x)'}</IF> for its current choice
         of parameters <IF>{'\\theta_i'}</IF>.
       </p>
       <p>
@@ -137,17 +137,24 @@ const SupervisedLearning = () => (
       </p>
       <h2>Gradient Descent</h2>
       <p>
-        Gradient descent is an iterative process. At each step, we adjust each
-        parameter <IF>{'\\theta_i'}</IF> in the following way in order to decrease <IF>J</IF>:
+        Gradient descent is an iterative process that seeks to minimize <IF>J</IF>.
+        At each step, we adjust each
+        parameter <IF>{'\\theta_i'}</IF> as follows:
       </p>
       <p>
         <F>
-          {'\\theta_i \\Rightarrow \\theta_i - \\alpha\\frac{d}{d\\theta_i}J(\\theta_i)'}
+          {'\\theta_i \\Rightarrow \\theta_i - \\alpha\\frac{d}{d\\theta_i}J(\\theta)'}
         </F>
       </p>
       <p>
-        After the supervised learning algorithm has been trained with the gradient descent,
-        we can evaluate the resulting hypothesis function, and then use it to make predictions.
+        Where <IF>{'\\frac{d}{d\\theta_i}J(\\theta)'}</IF> is the derivative of the entire
+        cost function (an expression which includes all the parameters as well as all the
+        training examples) with respect to the particular parameter <IF>{'\\theta_i'}</IF>.
+      </p>
+      <p>
+        After the supervised learning model has been trained with gradient descent,
+        we can evaluate the effectiveness of the resulting hypothesis function,
+        and then use it to make predictions.
       </p>
       <h3>The Learning Rate Hyperparameter</h3>
       <p>
@@ -157,12 +164,65 @@ const SupervisedLearning = () => (
       </p>
       <p>
         If <IF>{'\\alpha'}</IF> is too small,
-        it can slow down the gradient descent process. If <IF>{'\\alpha'}</IF> is too large,
-        it can cause gradient descent to overshoot the minimum and diverge.
+        it can slow down the gradient descent process. Conversely, if <IF>{'\\alpha'}</IF> is
+        too large, it can cause gradient descent to overshoot the minimum and diverge.
       </p>
-      <h2>Common Supervised Learning Algorithms</h2>
+      <h2>The Train-Test Split</h2>
       <p>
-        Widely used algorithms include:
+        It is best practice to partition your training examples into
+        a <b>training set</b> and a <b>test set</b>. Andrew Ng recommands 70% training, 30% test.
+      </p>
+      <p>
+        Train your model on the training set, then evaluate your model&#39;s accuracy with
+        the test set, which your model has never seen before. This allows you to more
+        accurately evaluate how well your model&#39;s hypothesis will perform on real-world data.
+      </p>
+      <p>
+        If you must also tune hyperparameters for your model, you should partition off an
+        additional <b>validation set</b>. Andrew Ng recommends
+        60% training, 20% validation, 20% test.
+      </p>
+      <p>
+        Train your model repeatedly on the test set using various hyperparameters, evaluate
+        each hypothesis on the validation set to find the hyperparameters that produce
+        the best hypothesis, then do a final evaluation of the best hypothesis on
+        the test set to estimate performance on real-world data.
+      </p>
+      <h2>The Bias-Variance Tradeoff</h2>
+      <p>
+        Bias and variance are two sources of error that can cause supervised learning
+        algorithms to perform poorly.
+      </p>
+      <p>
+        <b>Bias</b> refers to assumptions that a learning model makes about the hypothesis
+        <IF>H</IF>. For example, the linear
+        regression model assumes that the <IF>H</IF> has a linear form.
+      </p>
+      <p>
+        When a learning model makes overly simplifying assumptions about <IF>H</IF>,
+        or alternatively, if the learning model is too simple to capture the
+        complex relationship between <IF>{'x^{(i)}'}</IF> and  <IF>{'y^{(i)}'}</IF>, we
+        say that the model has high bias.
+      </p>
+      <p>
+        <b>Variance</b> refers to how sensitive a learning model is to random noise in
+        the training set. If two roughly similar training sets cause a learning model
+        to produce drastically different hypotheses, this model has high variance.
+      </p>
+      <p>
+        The <b>bias-variance tradeoff</b> refers to the fact that learning algorithms
+        that can more flexibly model complex functions (and thus have low bias)
+        tend to have high variance and overfit their data.
+      </p>
+      <p>
+        One approach to mitigating this tradeoff is to pick a model with
+        high variance, and then collect sufficient data to prevent overfitting.
+        However, there is still a tradeoff where the higher variance your
+        model is, the more data you will need.
+      </p>
+      <h2>Common Supervised Learning Models</h2>
+      <p>
+        Widely used models include:
         <ul>
           <li>Linear regression</li>
           <li>Logistic regression</li>
@@ -174,10 +234,10 @@ const SupervisedLearning = () => (
       </p>
       <p>
         There are also <b>ensemble</b> methods such as bagging and boosting that combine
-        a set of weaker hypotheses into a stronger hypothesis that performs much better.
+        a set of weaker models into a stronger one that performs much better.
       </p>
       <p>
-        The top supervised learning algorithms tend to perform on par with each other,
+        The top supervised learning models tend to perform on par with each other,
         and all of them do better with more data.
       </p>
       <div className={cx(cs.footer, cs.note)}>
