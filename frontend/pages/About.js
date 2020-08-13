@@ -33,7 +33,7 @@ const About = () => (
     <div className={cs.description}>
       I&apos;ve previously held engineering, product design, and engineering management
       roles at Google, Palantir, Kensho, and the Emerson Collective.
-      Learn more <ExternalLink className={cs.link} href={LINKEDIN_LINK}>here</ExternalLink>
+      Check out my <ExternalLink className={cs.link} href={LINKEDIN_LINK}>LinkedIn</ExternalLink> for more info.
     </div>
     <div className={cs.description}>
       I live in San Francisco, where I am working on something new.
