@@ -1,21 +1,38 @@
 import {BrowserRouter} from 'react-router-dom'
+import {withRouter} from 'react-router'
+import PropTypes from 'prop-types'
+import cx from 'classnames';
 
 import routes from './routes'
 
 import DesktopNav from './DesktopNav'
-import MobileNav from './MobileNav'
 import cs from './styles.css'
 
-const App = () => (
-  <BrowserRouter>
+const App = ({location}) => {
+  const isHome = location.pathname === '/'
+  return (
     <div className={cs.app}>
-      <DesktopNav className={cs.desktopNav} />
-      <MobileNav className={cs.mobileNav} />
-      <div className={cs.content}>
+      {!isHome && <DesktopNav />}
+      <div className={cx(!isHome && cs.content)}>
         {routes}
       </div>
     </div>
+  )
+}
+
+App.propTypes = {
+  location: PropTypes.shape({
+    pathname: PropTypes.string,
+  }),
+}
+
+// withRouter needs to be inside of <BrowserRouter />
+const WrappedApp = withRouter(App)
+
+const OuterApp = () => (
+  <BrowserRouter>
+    <WrappedApp />
   </BrowserRouter>
 )
 
-export default App
+export default OuterApp

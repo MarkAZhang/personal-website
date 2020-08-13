@@ -1,6 +1,10 @@
 $white: #FFFFFF;
 $gray-light-1: #F0EFF3;
 
+$gray-dark: #999;
+$gray-darker: #666;
+$gray-darkest: #333;
+
 $text: #333333;
 $text-light: #626668;
 $text-light-2: #8c9193;
@@ -13,7 +17,7 @@ $annotation: #35383A;
 $selected: #4581F4;
 $selected-hover: #7AA8FF;
 
-$box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+$box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 
 $sidebar-title: #656666;
 $sidebar-link: #b1b1b2;

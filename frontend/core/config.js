@@ -1,11 +1,15 @@
 const links = [
   {
-    label: 'Linkedin',
-    external: 'https://www.linkedin.com/in/mark-zhang-1726361b/',
+    label: 'Bookshelf',
+    to: '/bookshelf',
   },
   {
-    label: 'Github',
-    external: 'https://github.com/MarkAZhang/',
+    label: 'Artists',
+    to: '/artists',
+  },
+  {
+    label: 'About',
+    to: '/about',
   },
 ]
 

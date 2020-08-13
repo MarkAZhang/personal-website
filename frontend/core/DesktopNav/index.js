@@ -5,8 +5,8 @@ import NavLinks from '../NavLinks'
 
 import cs from './styles.css'
 
-const DesktopNav = props => (
-  <div className={cx(cs.navigation, props.className)}>
+const DesktopNav = ({ className }) => (
+  <div className={cx(cs.navigation, className)}>
     <div className={cs.inner}>
       <NavLinks />
     </div>
