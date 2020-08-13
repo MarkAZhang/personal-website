@@ -4,7 +4,8 @@ import cs from './styles.css'
 
 import ExternalLink from '~/components/ExternalLink'
 
-const IDSEQ_LINK = 'https://public.idseq.net/';
+const IDSEQ_LINK = 'https://public.idseq.net/'
+const LINKEDIN_LINK = 'https://www.linkedin.com/in/mark-zhang-1726361b/'
 
 const About = () => (
   <div className={cs.about}>
@@ -32,6 +33,7 @@ const About = () => (
     <div className={cs.description}>
       I&apos;ve previously held engineering, product design, and engineering management
       roles at Google, Palantir, Kensho, and the Emerson Collective.
+      Learn more <ExternalLink className={cs.link} href={LINKEDIN_LINK}>here</ExternalLink>
     </div>
     <div className={cs.description}>
       I live in San Francisco, where I am working on something new.
