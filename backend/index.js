@@ -4,8 +4,7 @@ import express from 'express'
 const app = express()
 
 const PATH_DIST = path.resolve(__dirname, '../frontend-dist')
-
-app.use('/static', express.static(PATH_DIST))
+app.use('/frontend-dist', express.static(PATH_DIST))
 
 app.get('/*', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../index.html'));

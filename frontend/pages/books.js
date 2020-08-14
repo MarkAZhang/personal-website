@@ -1,3 +1,5 @@
+import WRITINGS from './writing_links'
+
 const BOOKS = [
     { name: 'Dubliners', author: 'James Joyce' },
     { name: 'Good Strategy, Bad Strategy', author: 'Richard Rumelt' },
@@ -79,7 +81,7 @@ const BOOKS = [
     { name: 'Speaker for the Dead', author: 'Orson Scott Card' },
     { name: 'The Golden Compass', author: 'Philip Pullman' },
     { name: 'Surely You\'re Joking, Mr. Feynman!', favorite: true, author: 'Richard Fenyman' },
-    { name: 'Genentech: The Beginnings Of Biotech', author: 'Sally Smith Hughes' },
+    { name: 'Genentech: The Beginnings Of Biotech', author: 'Sally Smith Hughes', notes: WRITINGS.book_notes_genentech },
     { name: 'The Antidote', author: 'Barry Werth' },
     { name: 'The Billion-Dollar Molecule', author: 'Barry Werth' },
     { name: 'From Third World to First: The Singapore Story', author: 'Lee Kuan Yew' },

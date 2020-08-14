@@ -1,5 +1,9 @@
 const links = [
   {
+    label: 'Writings',
+    to: '/writings',
+  },
+  {
     label: 'Bookshelf',
     to: '/bookshelf',
   },

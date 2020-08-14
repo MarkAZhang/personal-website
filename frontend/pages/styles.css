@@ -70,6 +70,16 @@
   }
 }
 
-a {
-  color: $gray-dark;
+.posts {
+  @mixin font bodyText;
+
+  li {
+    margin-bottom: 5px;
+
+    .date {
+      @mixin font label;
+      color: $gray-darker;
+      margin-left: 5px;
+    }
+  }
 }

@@ -2,8 +2,21 @@ import { sortBy } from 'lodash/fp';
 import cx from 'classnames';
 
 import BOOKS from './books';
-
 import cs from './styles.css';
+
+import ExternalLink from '~/components/ExternalLink'
+
+const renderItem = book => {
+  const name = book.notes
+    ? <ExternalLink href={book.notes}>{book.name}</ExternalLink>
+    : book.name
+
+  return (
+    <li className={cx(book.favorite && cs.favorite)} key={book.name}>
+      {name}<span className={cs.author}>{book.author}</span>
+    </li>
+  )
+}
 
 const Bookshelf = () => (
   <div className={cs.bookshelf}>
@@ -16,11 +29,7 @@ const Bookshelf = () => (
       my all-time favorites in bold:
     </div>
     <ul className={cs.books}>
-      {sortBy('name', BOOKS).map(book => (
-        <li className={cx(book.favorite && cs.favorite)}>
-          <span>{book.name}</span><span className={cs.author}>{book.author}</span>
-        </li>
-      ))}
+      {sortBy('name', BOOKS).map(renderItem)}
     </ul>
   </div>
 )

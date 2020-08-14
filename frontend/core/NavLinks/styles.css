@@ -3,6 +3,7 @@
 .title {
   @mixin font heroTitle;
   color: $gray-darker;
+  text-decoration: none;
 }
 
 .links {
@@ -17,6 +18,7 @@
   @mixin font sidebarLink;
   margin: 6px 10px;
   color: $gray-dark;
+  text-decoration: none;
   cursor: pointer;
 
   &:hover {
