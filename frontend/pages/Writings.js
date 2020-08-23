@@ -21,6 +21,11 @@ const POSTS = [
     date: '2020-08-14',
     link: WRITINGS.links_roundup_2020_08_14,
   },
+  {
+    name: 'Links Roundup',
+    date: '2020-08-23',
+    link: WRITINGS.links_roundup_2020_08_23,
+  },
 ]
 
 const renderPost = post => (

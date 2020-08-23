@@ -126,12 +126,13 @@ const BOOKS = [
     { name: 'The Count of Mount Cristo', author: 'Alexandre Dumas' },
     { name: 'The Sound and the Fury', author: 'William Faulkner' },
     { name: 'The Linux Programming Interface', author: 'Michael Kerrisk' },
-    { name: 'Don\t Make Me Think', author: 'Steve Krug' },
+    { name: 'Don\'t Make Me Think', author: 'Steve Krug' },
     { name: 'The Design of Everyday Things', author: 'Don Norman' },
     { name: 'How the Immune System Works', author: 'Lauren Sompayrac' },
     { name: 'Entrepreneur\'s Guide to a Biotech Startup', author: 'Peter Kolchinsky' },
     { name: 'If on a Winter\'s Night a Traveler', author: 'Italo Calvino' },
     { name: 'Huckleberry Finn', author: 'Mark Twain' },
+    { name: 'The Great CEO Within: A Tactical Guide to Company Building', author: 'Matt Mochary', favorite: true },
 ]
 
 export default BOOKS
