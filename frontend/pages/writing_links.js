@@ -3,6 +3,7 @@ const WRITINGS = {
     clinical_trials_guide: 'https://medium.com/@markazhang/the-5-minute-guide-to-clinical-trials-and-fda-approval-43fe1efb30e2',
     links_roundup_2020_08_14: 'https://medium.com/@markazhang/links-roundup-2020-08-14-26addc75944',
     links_roundup_2020_08_23: 'https://medium.com/@markazhang/links-roundup-2020-08-23-72492c67a03f',
+    links_roundup_2020_09_01: 'https://medium.com/@markazhang/top-reads-of-the-week-2020-09-01-65b74b759cc7',
 }
 
 export default WRITINGS

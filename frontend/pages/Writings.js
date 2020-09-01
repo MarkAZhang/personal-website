@@ -17,14 +17,19 @@ const POSTS = [
     link: WRITINGS.clinical_trials_guide,
   },
   {
-    name: 'Links Roundup',
+    name: 'Top Reads of the Week: Gene-edited squids, telemedicine mergers, bitter lessons from AI',
     date: '2020-08-14',
     link: WRITINGS.links_roundup_2020_08_14,
   },
   {
-    name: 'Links Roundup',
+    name: 'Top Reads of the Week: Penguin math, zombie pig brains, and a spyware emperor speaks out',
     date: '2020-08-23',
     link: WRITINGS.links_roundup_2020_08_23,
+  },
+  {
+    name: 'Top Reads of the Week: An overlooked multi-billion toy company, a nuanced look at AI progress, and why tennis is so weird',
+    date: '2020-09-01',
+    link: WRITINGS.links_roundup_2020_09_01,
   },
 ]
 
